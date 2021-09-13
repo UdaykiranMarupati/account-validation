@@ -1,0 +1,32 @@
+
+spring:
+  profiles:
+    active: "prod"
+
+accountvalidation:
+  providers:
+    provider1: https://provider1.com/v1/api/account/validate
+    provider2: https://provider2.com/v2/api/account/validate
+server:
+  port: 8080
+
+---
+spring:
+  profiles: development
+
+accountvalidation:
+  providers:
+    provider1: https://provider1.com/v1/api/account/validate
+    provider2: https://provider2.com/v2/api/account/validate
+server:
+  port: 8081
+---
+spring:
+  profiles: prod
+
+accountvalidation:
+  providers:
+    provider1: https://provider1.com/v1/api/account/validate
+    provider2: https://provider2.com/v2/api/account/validate
+server:
+  port: 8082
